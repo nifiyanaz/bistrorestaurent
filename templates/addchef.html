@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+addchef
+{% endblock title %}
+{% block content %}
+
+<h1 class="about">__Add Chefs__</h1>
+<form method="post" action="{% url 'addchef' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <input class="btn btn-success" type="submit" value="addchef">
+</form>
+
+
+{% endblock %}

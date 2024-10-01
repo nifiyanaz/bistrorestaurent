@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+addmenu
+{% endblock title %}
+{% block content %}
+
+<h1 class="about">__Add Menus__</h1>
+<form method="post" action="{% url 'addmenu' %}">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit"value="addmenu">
+    <h1>{{message}}</h1>
+
+</form>
+
+{% endblock %}

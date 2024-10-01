@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}
+chef
+{% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="desp">
+  <h1 class="displya-3 text-dark  animated slideInLeft">Chef</h1>
+  <p>Home/chef/pages</p>
+  <img class="rounded-circle" src="{% static 'images/img10.png' %}">
+  <br><br><br><br>
+ </div> 
+<br>
+
+<h5 class="about">____Team Members____</h5>
+<h1>Oru master Chefs</h1>
+<div class="container">
+    
+<div class="card" style="width: 18rem;">
+    <img src="{% static 'chefs/chef1.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">name</p>
+    </div>
+  </div>
+  <br>
+  <div class="card" style="width: 18rem;">
+    <img src="{% static 'chefs/chef2.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">name</p>
+    </div>
+  </div>
+  <br>
+  <div class="card" style="width: 18rem;">
+    <img src="{% static 'chefs/chef3.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">name</p>
+    </div>
+  </div>
+  <br>
+  <div class="card" style="width: 18rem;">
+    <img src="{% static 'chefs/chef4.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">name</p>
+    </div>
+  </div>
+
+  {% for x in tasks %}  
+  <div class="card" style="width: 18rem;">
+      
+    <img src="{{x.chefimg.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">  {{x.name}}<br>
+        {{x.email}}</p>
+    </div>
+    
+  </div>
+  {% endfor %} 
+ 
+   <a href="{% url 'addchef' %}">Addchef</a>
+</div>
+
+
+{%endblock%}
